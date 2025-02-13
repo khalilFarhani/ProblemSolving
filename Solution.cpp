@@ -3690,6 +3690,25 @@ int islandPerimeter(vector<vector<int>>& grid) {
        return ans;
    }
 
+   //problem 171 : leetcode 3442. Maximum Difference Between Even and Odd Frequency I
+   int maxDifference(string s) {
+       vector<int>occ(26, 0);
+       for (char c : s) {
+           occ[c - 'a']++;
+       }
+       int mxOdd = INT_MIN;
+       int mnEven = INT_MAX;
+       for (char c : s) {
+           if (occ[c - 'a'] % 2 == 0) {
+               mnEven = min(mnEven, occ[c - 'a']);
+           }
+           else {
+               mxOdd = max(mxOdd, occ[c - 'a']);
+           }
+       }
+       return mxOdd - mnEven;
+   }
+
 
 };
 
