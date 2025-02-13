@@ -3709,6 +3709,23 @@ int islandPerimeter(vector<vector<int>>& grid) {
        return mxOdd - mnEven;
    }
 
+   //problem 172 : leetcode 3438. Find Valid Pair of Adjacent Digits in String
+   string findValidPair(string s) {
+       vector<int>v(10, 0);
+       for (char c : s) {
+           v[c - '0']++;
+       }
+       string ans = "";
+       for (int i = 1;i < s.size();i++) {
+           if (s[i - 1] != s[i] && v[s[i] - '0'] == s[i] - '0' && v[s[i - 1] - '0'] == s[i - 1] - '0') {
+               ans += s[i - 1];
+               ans += s[i];
+               return ans;
+           }
+       }
+       return "";
+   }
+
 
 
 };
