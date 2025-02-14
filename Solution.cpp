@@ -3726,6 +3726,22 @@ int islandPerimeter(vector<vector<int>>& grid) {
        return "";
    }
 
+   //problem 173 : leetcode 3432. Count Partitions with Even Sum Difference
+   bool isEven(int num) {
+       return num % 2 == 0;
+   }
+   int countPartitions(vector<int>& nums) {
+       int sum = accumulate(nums.begin(), nums.end(), 0);
+       int leftSum = 0;
+       int ans = 0;
+       for (int i = 0;i < nums.size() - 1;i++) {
+           leftSum += nums[i];
+           sum -= nums[i];
+           if (isEven(abs(sum - leftSum)))
+               ans++;
+       }
+       return ans;
+   }
 
 
 };
