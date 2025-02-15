@@ -3743,6 +3743,22 @@ int islandPerimeter(vector<vector<int>>& grid) {
        return ans;
    }
 
+   //problem 174 : leetcode 3452. Sum of Good Numbers
+   int sumOfGoodNumbers(vector<int>& nums, int k) {
+       int sum = 0;
+       int n = nums.size();
+       for (int i = 0; i < n;i++) {
+           int first = i - k;
+           int second = i + k;
+           if (first < 0 || first >= n || nums[first] < nums[i])
+           {
+               if (second < 0 || second >= n || nums[second] < nums[i])
+                   sum += nums[i];
+           }
+       }
+       return sum;
+   }
+
 
 };
 
