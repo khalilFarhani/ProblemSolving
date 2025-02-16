@@ -3759,6 +3759,29 @@ int islandPerimeter(vector<vector<int>>& grid) {
        return sum;
    }
 
+   //problem 175 : leetcode 3456. Find Special Substring of Length K
+   bool hasSpecialSubstring(string s, int k) {
+       int first = 0;
+       int last = 1;
+       for (int i = 1; i < s.size();i++) {
+           if (s[i] == s[i - 1]) {
+               last++;
+           }
+           else if (last - first == k) {
+               return true;
+           }
+           else {
+               first = i;
+               last = i + 1;
+           }
+
+       }
+       if (last - first == k) {
+           return true;
+       }
+       return false;
+   }
+
 
 };
 
