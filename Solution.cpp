@@ -3782,6 +3782,20 @@ int islandPerimeter(vector<vector<int>>& grid) {
        return false;
    }
 
+   //problem 176 : leetCode 3461. Check If Digits Are Equal in String After Operations I
+   bool hasSameDigits(string s) {
+       while (s.size() > 2) {
+           string tmp = "";
+           for (int i = 1;i < s.size();i++) {
+               tmp += (((s[i - 1] - '0') + (s[i] - '0')) % 10) + 48;
+           }
+           s = tmp;
+       }
+       if (s[0] == s[1])
+           return true;
+       return false;
+   }
+
 
 };
 
