@@ -1,0 +1,7 @@
+C:\Users\DELL\Desktop\MyGitHub\ProblemSolving\SolutionCSharp\bin\Debug\SolutionCSharp.exe.config
+C:\Users\DELL\Desktop\MyGitHub\ProblemSolving\SolutionCSharp\bin\Debug\SolutionCSharp.exe
+C:\Users\DELL\Desktop\MyGitHub\ProblemSolving\SolutionCSharp\bin\Debug\SolutionCSharp.pdb
+C:\Users\DELL\Desktop\MyGitHub\ProblemSolving\SolutionCSharp\obj\Debug\SolutionCSharp.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\MyGitHub\ProblemSolving\SolutionCSharp\obj\Debug\SolutionCSharp.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\MyGitHub\ProblemSolving\SolutionCSharp\obj\Debug\SolutionCSharp.exe
+C:\Users\DELL\Desktop\MyGitHub\ProblemSolving\SolutionCSharp\obj\Debug\SolutionCSharp.pdb
