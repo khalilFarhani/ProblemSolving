@@ -38,5 +38,47 @@ namespace SolutionCSharp
             }
             return (int)right;
         }
+
+        //problem 179 : leetCode 5. Longest Palindromic Substring
+        public string LongestPalindrome(string s)
+        {
+            SortedDictionary<int, string> subs = new SortedDictionary<int, string>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
+            int left, right;
+            int n = s.Length;
+            for (int i = 0; i < n; i++)
+            {
+                if (i + 1 < n && s[i] == s[i + 1])
+                {
+                    string str = s.Substring(i, 2);
+                    left = i - 1;
+                    right = i + 2;
+                    while (left >= 0 && right < n && s[left] == s[right])
+                    {
+                        str = s[left] + str + s[right];
+                        left--;
+                        right++;
+                    }
+                    subs[str.Length] = str;
+                }
+                if (i + 2 < n && s[i] == s[i + 2])
+                {
+                    string str = s.Substring(i, 3);
+                    left = i - 1;
+                    right = i + 3;
+                    while (left >= 0 && right < n && s[left] == s[right])
+                    {
+                        str = s[left] + str + s[right];
+                        left--;
+                        right++;
+                    }
+                    subs[str.Length] = str;
+                }
+            }
+            if (subs.Count > 0)
+            {
+                return subs.First().Value;
+            }
+            return s.Length > 0 ? s[0].ToString() : "";
+        }
     }
 }
