@@ -80,5 +80,16 @@ namespace SolutionCSharp
             }
             return s.Length > 0 ? s[0].ToString() : "";
         }
+
+        //problem 180 : leetCode 414. Third Maximum Number
+        public int ThirdMax(int[] nums)
+        {
+            SortedSet<int> st = new SortedSet<int>(nums, Comparer<int>.Create((a, b) => b.CompareTo(a)));
+            if (st.Count >= 3)
+            {
+                return st.ElementAt(2);
+            }
+            return st.ElementAt(0);
+        }
     }
 }
