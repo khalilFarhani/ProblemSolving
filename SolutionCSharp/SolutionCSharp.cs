@@ -91,5 +91,55 @@ namespace SolutionCSharp
             }
             return st.ElementAt(0);
         }
+
+        //problem 181 : leetCode 2570. Merge Two 2D Arrays by Summing Values
+        public int[][] MergeArrays(int[][] nums1, int[][] nums2)
+        {
+            int i = 0, j = 0;
+            List<int[]> merge = new List<int[]>();
+
+            while (i < nums1.Length || j < nums2.Length)
+            {
+                int[] both = new int[2];
+
+                if (i >= nums1.Length)
+                {
+                    both[0] = nums2[j][0];
+                    both[1] = nums2[j][1];
+                    j++;
+                }
+                else if (j >= nums2.Length)
+                {
+                    both[0] = nums1[i][0];
+                    both[1] = nums1[i][1];
+                    i++;
+                }
+                else
+                {
+                    if (nums1[i][0] < nums2[j][0])
+                    {
+                        both[0] = nums1[i][0];
+                        both[1] = nums1[i][1];
+                        i++;
+                    }
+                    else if (nums1[i][0] > nums2[j][0])
+                    {
+                        both[0] = nums2[j][0];
+                        both[1] = nums2[j][1];
+                        j++;
+                    }
+                    else
+                    {
+                        both[0] = nums1[i][0];
+                        both[1] = nums1[i][1] + nums2[j][1];
+                        i++;
+                        j++;
+                    }
+                }
+                merge.Add(both);
+            }
+
+            return merge.ToArray();
+        }
     }
 }
