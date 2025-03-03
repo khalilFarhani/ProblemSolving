@@ -141,5 +141,33 @@ namespace SolutionCSharp
 
             return merge.ToArray();
         }
+
+        //problem 182 : leetCode 3467. Transform Array by Parity  
+        public int[] TransformArray(int[] nums)
+        {
+            int[] ans = new int[nums.Length];
+            int i = 0;
+            int j = nums.Length - 1;
+            foreach (int val in nums)
+            {
+                if (val % 2 == 0)
+                {
+                    ans[i] = 0;
+                    i++;
+                }
+                else
+                {
+                    ans[j] = 1;
+                    j--;
+                }
+            }
+            return ans;
+        }
+
+
+
+
+
+
     }
 }
