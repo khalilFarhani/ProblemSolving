@@ -164,6 +164,18 @@ namespace SolutionCSharp
             return ans;
         }
 
+        //problem 183 : leetCode 3190. Find Minimum Operations to Make All Elements Divisible by Three
+        public int MinimumOperations(int[] nums)
+        {
+            int ans = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] % 3 != 0)
+                    ans++;
+            }
+            return ans;
+        }
+
 
 
 
